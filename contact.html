@@ -47,23 +47,44 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-  <!-- NAVIGATION -->
-  <header class="border-b-2 border-black/80 px-8 py-5 flex items-center justify-between">
-        <div class="font-black text-sm tracking-tight uppercase">STUDENT_PORTFOLIO_V1</div>
-        <nav class="flex gap-8 text-xs font-medium uppercase tracking-wider">
-            <a href="index.html" class="hover:text-brand-gold transition-colors duration-300">Home</a>
-            <a href="projects.html" class="hover:text-brand-gold transition-colors duration-300">Projects</a>
-            <a href="contact.html" class="border-b-2 border-black pb-1">Contact</a>
-        </nav>
-        <div class="flex items-center gap-6">
-            <button class="hover:text-brand-gold transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-            </button>
-            <a href="#" class="bg-black text-white px-5 py-2 text-xs font-bold uppercase tracking-wider hover:bg-brand-gold transition-colors duration-300">Download_CV</a>
-        </div>
-    </header>
+ <!-- NAVIGATION -->
+<header class="border-b-2 border-black/80 px-8 py-5 flex items-center justify-between relative bg-white">
+      <div class="font-black text-sm tracking-tight uppercase">STUDENT_PORTFOLIO_V1</div>
+        <nav class="hidden md:flex gap-8 text-xs font-medium uppercase tracking-wider">
+        <a href="index.html" class="hover:text-brand-gold transition-colors duration-300">Home</a>
+        <a href="projects.html" class="hover:text-brand-gold transition-colors duration-300">Projects</a>
+        <a href="contact.html" class="border-b-2 border-black pb-1">Contact</a>
+    </nav>
+    <div class="flex items-center gap-6">
+        <button class="hover:text-brand-gold transition-colors duration-300"> 
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>              
+        </button>
+        <a href="#" class="hidden sm:block bg-black text-white px-5 py-2 text-xs font-bold uppercase tracking-wider hover:bg-brand-gold transition-colors duration-300">Download_CV</a>
+        <button id="mobile-menu-btn" class="md:hidden hover:text-brand-gold transition-colors duration-300" aria-label="Toggle Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+</header>
+<div id="mobile-menu" class="hidden md:hidden border-b-2 border-black/80 bg-white">
+    <nav class="flex flex-col p-8 gap-6 text-sm font-bold uppercase tracking-wider">
+        <a href="index.html" class="border-b border-black/20 pb-1 hover:text-brand-gold transition-colors duration-300">Home</a>
+        <a href="projects.html" class="border-b border-black/20 pb-1 hover:text-brand-gold transition-colors duration-300">Projects</a>
+        <a href="contact.html" class="border-b-2 border-black/20 pb-1 text-brand-gold transition-colors duration-300">Contact</a>
+        <a href="#" class="bg-black text-white px-5 py-3 text-center mt-4 hover:bg-brand-gold transition-colors duration-300">Download_CV</a>
+    </nav>
+</div>
+
+<!--Script to Toggle the Menu -->
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+</script>
 
   <!-- CONTACT HEADER -->
   <section class="border-b-2 border-primary">
@@ -87,36 +108,39 @@
       <div class="grid grid-cols-12 gap-12">
         
         <!-- FORM SIDE -->
-        <div class="col-span-12 lg:col-span-7">
-          <form class="space-y-8 border border-black/15 p-8 lg:p-10 bg-form-bg">
-            <div class="grid grid-cols-2 gap-8">
-              <div>
-                <label class="block text-xs font-semibold tracking-widest uppercase mb-3">FULL NAME</label>
-                <input type="text" placeholder="ALEX VANCE" class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
-              </div>
-              <div>
-                <label class="block text-xs font-semibold tracking-widest uppercase mb-3">EMAIL ADDRESS</label>
-                <input type="email" placeholder="CLIENT@DOMAIN.COM" class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
-              </div>
-            </div>
+<div class="col-span-12 lg:col-span-7">
+  <form class="space-y-6 md:space-y-8 border border-black/15 p-6 md:p-8 lg:p-10 bg-form-bg">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div>
+        <label class="block text-xs font-semibold tracking-widest uppercase mb-3">FULL NAME</label>
+        <input type="text" placeholder="ALEX VANCE" class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-2 text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold tracking-widest uppercase mb-3">EMAIL ADDRESS</label>
+        <input type="email" placeholder="CLIENT@DOMAIN.COM" class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-2 text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
+      </div>
+    </div>
 
-            <div>
-              <label class="block text-xs font-semibold tracking-widest uppercase mb-3">SUBJECT</label>
-              <input type="text" placeholder="PROJECT_COLLABORATION" class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
-            </div>
+    <div>
+      <label class="block text-xs font-semibold tracking-widest uppercase mb-3">SUBJECT</label>
+      <input type="text" placeholder="PROJECT_COLLABORATION" class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-2 text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
+    </div>
 
-            <div>
-              <label class="block text-xs font-semibold tracking-widest uppercase mb-3">MESSAGE</label>
-              <textarea rows="5" placeholder="DESCRIBE THE SCOPE..." class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 text-base font-medium transition-colors duration-300 resize-none placeholder:text-primary/30"></textarea>
-            </div>
-            <button class="bg-black text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] hover:bg-brand-gold transition-colors duration-300 flex items-center gap-3 group">
-                        INITIALIZE CONTACT
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-            </button>
-          </form>
-        </div>
+    <div>
+      <label class="block text-xs font-semibold tracking-widest uppercase mb-3">MESSAGE</label>
+      <textarea rows="5" placeholder="DESCRIBE THE SCOPE..." class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-2 text-base font-medium transition-colors duration-300 resize-none placeholder:text-primary/30"></textarea>
+    </div>
+    
+    <button class="w-full md:w-auto bg-black text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] hover:bg-brand-gold transition-colors duration-300 flex items-center justify-center md:justify-start gap-3 group">
+      INITIALIZE CONTACT
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </button>
+    
+  </form>
+</div>
 
         <!-- INFO SIDE -->
         <div class="col-span-12 lg:col-span-5 lg:pl-8">
@@ -177,9 +201,9 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+   <!-- FOOTER -->
   <footer class="bg-primary text-cream border-t-2 border-cream">
-    <div class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center text-xs">
+    <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs px-6 py-8 ">
       <p>© 2026 ARCHITECTURAL_SYSTEMS. ALL RIGHTS RESERVED.</p>
       <div class="flex gap-6">
         <a href="#" class="hover:text-accent transition-colors duration-300">LINKEDIN</a>

@@ -38,3 +38,14 @@ Why this approach:
 Zero External Dependencies: By inlining the SVG code directly into the HTML, I eliminated the need for external icon font libraries (like FontAwesome) or additional image HTTP requests, keeping the site lightweight and fast.
 Tailwind Integration: Inline SVGs allow me to style them dynamically using Tailwind CSS utility classes. For example, I can easily control their size (h-5 w-5), color (text-white, hover:text-brand-gold), and stroke width (stroke-width="2") directly in the HTML, ensuring they perfectly match the site's design system and hover states.
 Crisp at Any Resolution: As vector graphics, these icons remain perfectly sharp on all devices and high-DPI (Retina) displays, which is critical for a portfolio emphasizing "technical precision" and "architectural integrity."
+
+
+
+![Mobile Home Page](image-1.png)
+
+## Mobile Responsiveness
+
+To ensure the brutalist aesthetic translates seamlessly to smaller screens without compromising usability, I implemented several responsive strategies using Tailwind's mobile-first breakpoints (md:, lg:):
+Adaptive Navigation: Replaced the desktop horizontal nav with a clean, accessible hamburger menu on mobile. Toggling is handled by a lightweight Vanilla JavaScript snippet that adds/removes Tailwind's hidden class. This ensures the mobile menu naturally pushes page content down, strictly adhering to the "no position: absolute" rule.
+Stacked Project Lists: The "Current Projects" index transforms from a 12-column desktop grid into a single-column stacked layout on mobile (grid-cols-1 md:grid-cols-12). Category tags are wrapped in a flex container with flex-wrap to prevent overflow and maintain readability on narrow viewports.
+Touch-Friendly Contact Form: The form inputs stack vertically (grid-cols-1 md:grid-cols-2) on mobile to provide ample typing space. Container padding is responsively reduced (p-6 md:p-8), and the "INITIALIZE CONTACT" button expands to full width (w-full md:w-auto) to serve as an easily tappable touch target.

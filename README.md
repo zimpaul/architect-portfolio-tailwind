@@ -9,29 +9,6 @@ A high-fidelity, multi-page portfolio website built with a strict "Brutalist" ar
 
 ## Custom Theme Implementation
 I utilized Tailwind's @theme block in the <style> section to define CSS custom properties for my architectural portfolio's color palette. This approach allowed me to create a cohesive design system with semantic color names:
-```css
-@theme {
-  --color-primary: #1a2332;
-  --color-accent: #c75b39;
-  --color-cream: #f5f1eb;
-  --color-sage: #7a8b6f;
-  --color-warm-gray: #d4cfc7;
-  --color-deep-blue: #2d3e50;
-  --color-brand-gold: #da373d;
-  --color-form-bg: #dadada;
-  --color-deep-charcoal: #1a1a1a;
-  --color-light-gray: #f0f0f0;
-  --color-mid-gray: #e5e5e5;
-}
-I also extended the default Tailwind theme configuration in the script section to ensure these colors were available throughout the project. The --color-cream serves as my body background, --color-primary for text, and --color-brand-gold (#da373d) as my accent/hover color for interactive elements like buttons and links.
-
-Challenge: Creating the responsive statistics section with 4 equal columns that needed to maintain consistent borders and hover effects.
-Solution: Instead of using flexbox with complex calculations or absolute positioning, I implemented CSS Grid:
-
-<div class="grid grid-cols-2 md:grid-cols-4 border-primary">
-  <div class="p-8 border-primary hover:bg-accent/10 transition-colors duration-300">
-  <----->
-  </div>
 
 ## Iconography and SVG Assets
 
@@ -47,3 +24,29 @@ To ensure the brutalist aesthetic translates seamlessly to smaller screens witho
 Adaptive Navigation: Replaced the desktop horizontal nav with a clean, accessible hamburger menu on mobile. Toggling is handled by a lightweight Vanilla JavaScript snippet that adds/removes Tailwind's hidden class. This ensures the mobile menu naturally pushes page content down, strictly adhering to the "no position: absolute" rule.
 Stacked Project Lists: The "Current Projects" index transforms from a 12-column desktop grid into a single-column stacked layout on mobile (grid-cols-1 md:grid-cols-12). Category tags are wrapped in a flex container with flex-wrap to prevent overflow and maintain readability on narrow viewports.
 Touch-Friendly Contact Form: The form inputs stack vertically (grid-cols-1 md:grid-cols-2) on mobile to provide ample typing space. Container padding is responsively reduced (p-6 md:p-8), and the "INITIALIZE CONTACT" button expands to full width (w-full md:w-auto) to serve as an easily tappable touch target.
+
+}
+I also extended the default Tailwind theme configuration in the script section to ensure these colors were available throughout the project. The --color-cream serves as my body background, --color-primary for text, and --color-brand-gold (#da373d) as my accent/hover color for interactive elements like buttons and links.
+
+Challenge: Creating the responsive statistics section with 4 equal columns that needed to maintain consistent borders and hover effects.
+Solution: Instead of using flexbox with complex calculations or absolute positioning, I implemented CSS Grid:
+```css
+@theme {
+  --color-primary: #1a2332;
+  --color-accent: #c75b39;
+  --color-cream: #f5f1eb;
+  --color-sage: #7a8b6f;
+  --color-warm-gray: #d4cfc7;
+  --color-deep-blue: #2d3e50;
+  --color-brand-gold: #da373d;
+  --color-form-bg: #dadada;
+  --color-deep-charcoal: #1a1a1a;
+  --color-light-gray: #f0f0f0;
+  --color-mid-gray: #e5e5e5;
+
+
+<div class="grid grid-cols-2 md:grid-cols-4 border-primary">
+  <div class="p-8 border-primary hover:bg-accent/10 transition-colors duration-300">
+  <----->
+  </div>
+

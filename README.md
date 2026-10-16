@@ -2,6 +2,8 @@
 
 ![Home Page Screenshot](image.png)
 
+![Mobile Home Page](image-1.png)
+
 ## Overview
 A high-fidelity, multi-page portfolio website built with a strict "Brutalist" architectural aesthetic. The project focuses on pixel-perfect spacing, heavy structural borders, and mathematical precision using modern CSS layout techniques.
 
@@ -38,10 +40,6 @@ Why this approach:
 Zero External Dependencies: By inlining the SVG code directly into the HTML, I eliminated the need for external icon font libraries (like FontAwesome) or additional image HTTP requests, keeping the site lightweight and fast.
 Tailwind Integration: Inline SVGs allow me to style them dynamically using Tailwind CSS utility classes. For example, I can easily control their size (h-5 w-5), color (text-white, hover:text-brand-gold), and stroke width (stroke-width="2") directly in the HTML, ensuring they perfectly match the site's design system and hover states.
 Crisp at Any Resolution: As vector graphics, these icons remain perfectly sharp on all devices and high-DPI (Retina) displays, which is critical for a portfolio emphasizing "technical precision" and "architectural integrity."
-
-
-
-![Mobile Home Page](image-1.png)
 
 ## Mobile Responsiveness
 

@@ -1,3 +1,4 @@
+** Live Demo:** [Click here to view the live site](https://zimpaul.github.io/architect-portfolio-tailwind/)
 # Architectural Portfolio (Tailwind Edition)
 
 ![Home Page Screenshot](image.png)

@@ -103,44 +103,49 @@
   </section>
 
   <!-- CONTACT FORM & INFO -->
-  <section class="border-b-2 border-primary">
-    <div class="max-w-7xl mx-auto px-6 py-16">
-      <div class="grid grid-cols-12 gap-12">
-        
-        <!-- FORM SIDE -->
-<div class="col-span-12 lg:col-span-7">
-  <form class="space-y-6 md:space-y-8 border border-black/15 p-6 md:p-8 lg:p-10 bg-form-bg">
+ <section class="border-b-2 border-primary overflow-x-hidden">
+  <!-- Adjusted padding for mobile (px-4) and desktop (sm:px-6) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-      <div>
-        <label class="block text-xs font-semibold tracking-widest uppercase mb-3">FULL NAME</label>
-        <input type="text" placeholder="ALEX VANCE" class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-2 text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
-      </div>
-      <div>
-        <label class="block text-xs font-semibold tracking-widest uppercase mb-3">EMAIL ADDRESS</label>
-        <input type="email" placeholder="CLIENT@DOMAIN.COM" class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-2 text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
-      </div>
-    </div>
+    <!-- Changed gap to be smaller on mobile (gap-6) and larger on desktop (md:gap-12) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12">
+      
+      <!-- FORM SIDE: Added w-full and min-w-0 to prevent grid overflow -->
+      <div class="col-span-12 lg:col-span-7 w-full min-w-0">
+        <form class="space-y-6 md:space-y-8 border border-black/15 p-4 sm:p-6 md:p-8 lg:p-10 bg-form-bg w-full">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div class="w-full min-w-0">
+              <label class="block text-xs font-semibold tracking-widest uppercase mb-3">FULL NAME</label>
+              <!-- Increased px-2 to px-4 for better breathing room, added min-w-0 -->
+              <input type="text" placeholder="ALEX VANCE" class="w-full min-w-0 bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-4 text-sm md:text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
+            </div>
+            <div class="w-full min-w-0">
+              <label class="block text-xs font-semibold tracking-widest uppercase mb-3">EMAIL ADDRESS</label>
+              <input type="email" placeholder="CLIENT@DOMAIN.COM" class="w-full min-w-0 bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-4 text-sm md:text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
+            </div>
+          </div>
 
-    <div>
-      <label class="block text-xs font-semibold tracking-widest uppercase mb-3">SUBJECT</label>
-      <input type="text" placeholder="PROJECT_COLLABORATION" class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-2 text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
-    </div>
+          <div class="w-full min-w-0">
+            <label class="block text-xs font-semibold tracking-widest uppercase mb-3">SUBJECT</label>
+            <input type="text" placeholder="PROJECT_COLLABORATION" class="w-full min-w-0 bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-4 text-sm md:text-base font-medium transition-colors duration-300 placeholder:text-primary/30">
+          </div>
 
-    <div>
-      <label class="block text-xs font-semibold tracking-widest uppercase mb-3">MESSAGE</label>
-      <textarea rows="5" placeholder="DESCRIBE THE SCOPE..." class="w-full bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-2 text-base font-medium transition-colors duration-300 resize-none placeholder:text-primary/30"></textarea>
-    </div>
-    
-    <button class="w-full md:w-auto bg-black text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] hover:bg-brand-gold transition-colors duration-300 flex items-center justify-center md:justify-start gap-3 group">
-      INITIALIZE CONTACT
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-      </svg>
-    </button>
-    
-  </form>
-</div>
+          <div class="w-full min-w-0">
+            <label class="block text-xs font-semibold tracking-widest uppercase mb-3">MESSAGE</label>
+            <textarea rows="5" placeholder="DESCRIBE THE SCOPE..." class="w-full min-w-0 bg-transparent border-2 border-primary focus:border-accent outline-none py-3 px-4 text-sm md:text-base font-medium transition-colors duration-300 resize-none placeholder:text-primary/30"></textarea>
+          </div>
+          
+          <!-- Added flex-shrink-0 to SVG so it doesn't get squished on tiny screens -->
+          <button class="w-full md:w-auto bg-black text-white px-6 md:px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] hover:bg-brand-gold transition-colors duration-300 flex items-center justify-center md:justify-start gap-3 group">
+            INITIALIZE CONTACT
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
+          
+        </form>
+      </div>
 
         <!-- INFO SIDE -->
         <div class="col-span-12 lg:col-span-5 lg:pl-8">
